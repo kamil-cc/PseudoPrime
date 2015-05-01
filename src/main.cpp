@@ -60,14 +60,18 @@
 
 int main()
 {
-	ekran konsola; //Obiekt odpowiedzialny za wyœwietlanie tekstu
-	dane wej; //Obiekt przechowuj¹cy dane wejœciowe
-	ppalg algorytm; //Obiekt zawieraj¹cy g³ówny algorytm programu
-	wynik wyj; //Obiekt przechowuj¹cy wyniki
-	konsola.witaj(wej); //Komunikat na ekran
-	algorytm.licz(wej, wyj);  //Obliczenia 
-	konsola.podsumowanie(wyj); //Komunikat na ekran
-	konsola.koniec(); //Komunikat na ekran
+	ekran *konsola = new ekran(); //Obiekt odpowiedzialny za wyœwietlanie tekstu
+	dane *wej = new dane(); //Obiekt przechowuj¹cy dane wejœciowe
+	ppalg *algorytm = new ppalg(); //Obiekt zawieraj¹cy g³ówny algorytm programu
+	wynik *wyj = new wynik(); //Obiekt przechowuj¹cy wyniki
+	konsola->witaj(*wej); //Komunikat na ekran
+	algorytm->licz(*wej, *wyj); //Obliczenia 
+	konsola->podsumowanie(*wyj); //Komunikat na ekran
+	konsola->koniec(); //Komunikat na ekran
+	delete konsola;
+	delete wej;
+	delete algorytm;
+	delete wyj;
 	system("PAUSE"); //Oczekiwanie na wciœniêcie klawisza 
 	return 0;
 }
